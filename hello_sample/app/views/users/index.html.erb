@@ -1,1 +1,10 @@
-<h1>Hello World!!</h1>
+<%= link_to "投稿画面へ", "/users/new" %>
+<% @users.each do |user| %>
+  <p>
+    <%= user.name %>
+    <%= user.age %>
+    <%= link_to '削除', "/users/#{user.id}", method: :delete, data: {confirm: "削除しますか?"}  %>
+    <%= link_to '編集', "/users/#{user.id}/edit", method: :get %> 
+  </p>
+  </p>
+<% end %>
